@@ -1,0 +1,16 @@
+<div class="input-container">
+  <input class="num-input" [ngClass]="{'error': inputIsInvalid }" (keyup)="onKey($event)" ng-model="userInput" placeholder="123p">
+  <div class="error-block" *ngIf="inputIsInvalid">
+    Invalid input detected.
+  </div>
+</div>
+
+<div>
+  <button (click)="calculate()"> Calculate </button>
+</div>
+
+<div>
+  <p> Result : {{result}} </p>
+</div>
+
+

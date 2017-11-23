@@ -1,0 +1,14 @@
+.num-input {
+  margin-top: 20px;
+  margin-bottom:4px;
+  padding: 5px;}
+
+.input-container {
+  width:100%;
+  margin-bottom:20px;}
+
+.error {
+  border-color: red}
+
+.error-block {
+  color:red;}
