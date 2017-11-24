@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CurrencyCalculatorComponent } from './currency-calculator.component';
+import { DataService } from '../data.service';
 
 describe('CurrencyCalculatorComponent', () => {
   let component: CurrencyCalculatorComponent;
@@ -8,7 +9,8 @@ describe('CurrencyCalculatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CurrencyCalculatorComponent ]
+      declarations: [ CurrencyCalculatorComponent ],
+      providers: [DataService]
     })
     .compileComponents();
   }));

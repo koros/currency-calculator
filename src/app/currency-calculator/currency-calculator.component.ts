@@ -32,7 +32,6 @@ export class CurrencyCalculatorComponent implements OnInit {
     let input = parseFloat(sanitizedInput);
     if ( this.isPounds(this.userInput)) {
       input = this.truncateDecimals(input * 100);
-      console.log(' ==== ' + input);
     }
     this.result = this.getMinimumDenominations(input, null);
   }
