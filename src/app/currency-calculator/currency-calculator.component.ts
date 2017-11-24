@@ -33,7 +33,7 @@ export class CurrencyCalculatorComponent implements OnInit {
     if ( this.isPounds(this.userInput)) {
       input = this.truncateDecimals(input * 100);
     }
-    this.result = this.getMinimumDenominations(input, null);
+    this.result = this.getMinimumDenominations(input, '');
   }
 
   removeCurrencySymbol(str) {
