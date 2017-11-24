@@ -24,6 +24,7 @@ export class CurrencyCalculatorComponent implements OnInit {
   }
 
   calculate() {
+    this.inputIsInvalid = this.userInput === '' || this.inputIsInvalid ;
     if (this.inputIsInvalid ) {
       return;
     }

@@ -1,16 +1,25 @@
-<div class="input-container">
-  <input class="num-input" [ngClass]="{'error': inputIsInvalid }" (keyup)="onKey($event)" ng-model="userInput" placeholder="123p">
-  <div class="error-block" *ngIf="inputIsInvalid">
-    Invalid input detected.
+<div class="grey">
+  <div class="grey-box">
+    <h4> Available currency denominations (values in pence)</h4>
+    <span>{{availableCurrencyDenominations}}</span>
+
+    <p class="small"> The available currency denominations can be modified by editing the <span>data.service.ts</span> file </p>
+
+  </div>
+
+  <div class="input-container">
+    <input class="num-input" [ngClass]="{'error': inputIsInvalid }" (keyup)="onKey($event)" ng-model="userInput" placeholder="123p">
+    <div class="error-block" *ngIf="inputIsInvalid">
+      Invalid input. <br/>
+      Inputs can either be given in pounds e.g £12.34 or pence e.g 123p
+    </div>
+  </div>
+
+  <div>
+    <button class="calc-button" (click)="calculate()"> Calculate </button>
+  </div>
+
+  <div>
+    <p> Result : <span class="result"> {{result}} </span> </p>
   </div>
 </div>
-
-<div>
-  <button (click)="calculate()"> Calculate </button>
-</div>
-
-<div>
-  <p> Result : {{result}} </p>
-</div>
-
-

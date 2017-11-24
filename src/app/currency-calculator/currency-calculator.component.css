@@ -12,3 +12,26 @@
 
 .error-block {
   color:red;}
+
+.small {
+  color:#333;
+  font-size:13px;
+  font-weight: 500; }
+
+.small span{
+  color:maroon;}
+
+.grey-box {
+  padding:10px;
+  background-color:#EFEFEF;
+  border-radius:0px;
+  border-bottom:1px solid rgb(221, 221, 221);  }
+
+.grey {
+  background-color:#EFEFEF;
+  border:1px solid rgb(221, 221, 221);}
+
+.calc-button {
+  height: 30px;
+  min-width: 186px;}
+
