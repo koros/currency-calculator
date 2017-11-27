@@ -1,25 +1,32 @@
-<div class="grey">
+<mat-card>
+
   <div class="grey-box">
     <h4> Available currency denominations (values in pence)</h4>
     <span>{{availableCurrencyDenominations}}</span>
-
     <p class="small"> The available currency denominations can be modified by editing the <span>data.service.ts</span> file </p>
-
   </div>
 
-  <div class="input-container">
-    <input class="num-input" [ngClass]="{'error': inputIsInvalid }" (keyup)="onKey($event)" ng-model="userInput" placeholder="123p">
-    <div class="error-block" *ngIf="inputIsInvalid">
-      Invalid input. <br/>
+  <!-- User input field -->
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Enter the value in either pounds or pence" [formControl]="currencyFormControl" [errorStateMatcher]="matcher" (keyup)="onKey($event)" ng-model="userInput">
+    <mat-hint> The input will be validated instantly! </mat-hint>
+
+    <mat-error *ngIf="currencyFormControl.hasError('pattern') && !currencyFormControl.hasError('required')">
       Inputs can either be given in pounds e.g £12.34 or pence e.g 123p
-    </div>
+    </mat-error>
+    <mat-error *ngIf="currencyFormControl.hasError('required')">
+      Value is <strong>required</strong>
+    </mat-error>
+
+  </mat-form-field>
+  <!-- End User input field -->
+
+  <div style="margin-top:20px;">
+    <button mat-raised-button class="mat-primary" (click)="calculate()"> Calculate </button>
   </div>
 
   <div>
-    <button class="calc-button" (click)="calculate()"> Calculate </button>
+    <p>Result :   <span class="result">{{result}}</span> </p>
   </div>
 
-  <div>
-    <p>Result :   <span class="result">{{result}}</span></p>
-  </div>
-</div>
+</mat-card>

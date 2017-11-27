@@ -3,9 +3,24 @@ import { AppComponent } from './app.component';
 import { CurrencyCalculatorComponent } from './currency-calculator/currency-calculator.component';
 import {DataService} from './data.service';
 
+import { MatToolbarModule, MatCardModule, MatMenuModule, MatButtonModule, MatIconModule, MatInputModule } from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatIconModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+      ],
       declarations: [
         AppComponent,
         CurrencyCalculatorComponent

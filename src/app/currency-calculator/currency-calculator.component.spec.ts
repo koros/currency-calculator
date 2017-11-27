@@ -5,6 +5,9 @@ import { DataService } from '../data.service';
 
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { MatToolbarModule, MatCardModule, MatMenuModule, MatButtonModule, MatIconModule, MatInputModule } from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('CurrencyCalculatorComponent', () => {
   let component: CurrencyCalculatorComponent;
@@ -14,6 +17,17 @@ describe('CurrencyCalculatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatIconModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+      ],
       declarations: [ CurrencyCalculatorComponent ],
       providers: [DataService]
     })
